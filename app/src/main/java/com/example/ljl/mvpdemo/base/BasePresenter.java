@@ -1,6 +1,5 @@
 package com.example.ljl.mvpdemo.base;
 
-import com.example.ljl.mvpdemo.view.IView;
 
 import java.lang.ref.WeakReference;
 

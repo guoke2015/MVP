@@ -9,11 +9,11 @@ import com.example.ljl.mvpdemo.adapter.MainAdapter;
 import com.example.ljl.mvpdemo.base.BaseActivity;
 import com.example.ljl.mvpdemo.bean.Student;
 import com.example.ljl.mvpdemo.presenter.StudentPresenter;
-import com.example.ljl.mvpdemo.view.IView;
+import com.example.ljl.mvpdemo.view.IStudentView;
 
 import java.util.List;
 
-public class MainActivity extends BaseActivity<IView,StudentPresenter<IView>> implements IView {
+public class MainActivity extends BaseActivity<IStudentView, StudentPresenter<IStudentView>> implements IStudentView {
     private ListView list;
     private MainAdapter mainAdapter;
 
@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity<IView,StudentPresenter<IView>> im
     }
 
     @Override
-    protected StudentPresenter<IView> creatPresenter() {
+    protected StudentPresenter<IStudentView> creatPresenter() {
         return new StudentPresenter();
     }
 

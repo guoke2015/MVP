@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Ljl on 2017/12/10.
  */
 
-public interface IView {
+public interface IStudentView {
     void showLoad();
 
     void hideLoad();

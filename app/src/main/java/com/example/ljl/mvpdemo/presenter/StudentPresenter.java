@@ -4,7 +4,7 @@ import com.example.ljl.mvpdemo.base.BasePresenter;
 import com.example.ljl.mvpdemo.bean.Student;
 import com.example.ljl.mvpdemo.model.IStudentModer;
 import com.example.ljl.mvpdemo.model.SrudentModerImpl;
-import com.example.ljl.mvpdemo.view.IView;
+import com.example.ljl.mvpdemo.view.IStudentView;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Ljl on 2017/12/10.
  */
 
-public class StudentPresenter<V extends IView> extends BasePresenter<V> {
+public class StudentPresenter<V extends IStudentView> extends BasePresenter<V> {
 
     //model层的引用
     private IStudentModer studentModer = new SrudentModerImpl();
