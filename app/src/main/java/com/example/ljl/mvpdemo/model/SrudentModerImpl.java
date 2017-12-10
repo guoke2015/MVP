@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Created by Ljl on 2017/12/10.
  */
-public class SrudentModer implements IStudentModer {
+public class SrudentModerImpl implements IStudentModer {
     @Override
-    public void loadStudentInfo(onStudentInfoLiser infoLiser) {
+    public void loadStudentInfo(onStudentLisetener infoLiser) {
         List<Student> students = new ArrayList<>();
         Student student = new Student();
         student.setName("zhangsan");
@@ -32,6 +32,6 @@ public class SrudentModer implements IStudentModer {
         student4.setAge(18);
         students.add(student4);
 
-        infoLiser.loadInfo(students);
+        infoLiser.onSucess(students);
     }
 }

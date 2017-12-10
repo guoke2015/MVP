@@ -9,9 +9,10 @@ import java.util.List;
  */
 
 public interface IStudentModer {
-    void loadStudentInfo(onStudentInfoLiser infoLiser);
+    void loadStudentInfo(onStudentLisetener infoLiser);
 
-    interface onStudentInfoLiser{
-        void loadInfo(List<Student> students);
+    interface onStudentLisetener {
+        void onSucess(List<Student> students);
+        void onFail(String error);
     }
 }

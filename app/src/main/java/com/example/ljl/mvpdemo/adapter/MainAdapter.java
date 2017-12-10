@@ -32,7 +32,7 @@ public class MainAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int positoin) {
-        return null;
+        return students.get(positoin);
     }
 
     @Override

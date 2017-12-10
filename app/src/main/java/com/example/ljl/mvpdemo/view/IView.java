@@ -9,5 +9,11 @@ import java.util.List;
  */
 
 public interface IView {
-    void showData(List<Student> students);
+    void showLoad();
+
+    void hideLoad();
+
+    void showSuccess(List<Student> students);
+
+    void showFail(String error);
 }

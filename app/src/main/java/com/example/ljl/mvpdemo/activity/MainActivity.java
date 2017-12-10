@@ -1,29 +1,33 @@
 package com.example.ljl.mvpdemo.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.ljl.mvpdemo.R;
 import com.example.ljl.mvpdemo.adapter.MainAdapter;
+import com.example.ljl.mvpdemo.base.BaseActivity;
 import com.example.ljl.mvpdemo.bean.Student;
-import com.example.ljl.mvpdemo.preference.StudentPreference;
+import com.example.ljl.mvpdemo.presenter.StudentPresenter;
 import com.example.ljl.mvpdemo.view.IView;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements IView {
+public class MainActivity extends BaseActivity<IView,StudentPresenter<IView>> implements IView {
     private ListView list;
     private MainAdapter mainAdapter;
-    private StudentPreference studentPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        studentPreference = new StudentPreference(this);
-        studentPreference.showData();
+        mPresenter.fetch();
+    }
+
+    @Override
+    protected StudentPresenter<IView> creatPresenter() {
+        return new StudentPresenter();
     }
 
     private void initView() {
@@ -31,8 +35,23 @@ public class MainActivity extends AppCompatActivity implements IView {
     }
 
     @Override
-    public void showData(List<Student> students) {
+    public void showLoad() {
+
+    }
+
+    @Override
+    public void hideLoad() {
+
+    }
+
+    @Override
+    public void showSuccess(List<Student> students) {
         mainAdapter = new MainAdapter(this, students);
         list.setAdapter(mainAdapter);
+    }
+
+    @Override
+    public void showFail(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 }
